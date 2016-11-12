@@ -58,7 +58,6 @@ def BFS( V, E, start ):
   init V all white and NULL parent
   start.colour = grey
   init FIFO: Q.push( start )
-
   while Q.notempty():
     u = Q.pop()
     for v in E.adj[ u ]:
@@ -102,7 +101,8 @@ def DFS( V, E ):
   for u in V:     # why loop over all V?
     if u.colour == white:
       DFS-Visit( V, E, u )
-
+</code></pre>
+<pre><code data-trim>
 def DFS-Visit( V, E, u ):
   time++
   u.discovered = time
@@ -129,24 +129,27 @@ TODO: fig
 + **Print** a \`(\_u\` when we *discover* node *u*
   + print a \`)\_u\` when we *finish* it
 + Output is a valid **parenthesisation**:
-  + e.g., \`(\_u (\_v (\_w )\_w )\_v (\_x (\_y )\_y )\_x )\_u (\_z )\_z\`
-  + But not \`(\_u (\_v )\_u )\_v\`
+  + e.g., \`(.\_u (.\_v (.\_w )\_w )\_v (.\_x (.\_y )\_y )\_x )\_u (.\_z )\_z\`
+  + But not \`(.\_u (.\_v )\_u )\_v\`
 + The (*discover*, *finish*) intervals for any two vertices are
   + Either completely **disjoint**
   + Or one **contained** in the other
 
 ---
 ## DFS: white-path theorem
-+ From the parenthesis structure:
 + The (*d*, *f*) interval for *v* is **contained** in *u* <br/>
   &hArr; *v* is a **descendant** of *u* in the DFS
   + i.e., *u.d* < *v.d* < *v.f* < *u.f*
-+ **White-path** theorem:
-  + *v* is a **descendant** of *u* in the DFS &hArr;
-  + When *u* is *discovered*, there is <br/>
-    a **path** *u* &rarr; *v* all of *white* vertices
 
+<div class="imgbox"><div><ul>
+<li> <strong>White-path<strong> theorem: <ul>
+  <li> <em>v</em> is a <strong>descendant</strong> of <em>u</em> in the DFS &hArr; </li>
+  <li> When <em>u</em> is <em>discovered</em>, there is <br/>
+    a <strong>path</strong> <em>u</em> &rarr; <em>v</em> all of <em>white</em> vertices </li>
+  </ul></li>
+</ul></div><div>
 ![white path](static/img/white-path.svg)
+</div></div>
 
 >>>
 TODO: fig
@@ -218,7 +221,7 @@ TODO: fig
   <li> Starting at <em>b</em> (finished <strong>last</strong>)</li>
   </ul></li>
 <li> (c) Coalesce vertices into <strong>component graph</strong> </li>
-</ul></div><div style="flex:3">
+</ul></div><div style="flex:2">
 ![Fig, components](static/img/Fig22-3.svg)
 </div></div>
 
