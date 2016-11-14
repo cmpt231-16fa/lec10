@@ -2,6 +2,10 @@
 ## Lecture 10: ch18
 ### Graph Algorithms
 
+<div class="caption">
+Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.edu/)
+</div>
+
 ---
 ## Devotional
 
@@ -116,6 +120,18 @@ TODO: fig
 
 ---
 ## Outline
+
+---
+## Trémaux maze solving
++ Graph representation of a **maze**:
+  + *Vertex* = **intersection**, *edge* = **passage**
++ **Theseus** in *Labyrinth* to kill the *Minotaur*
+  + *Ariadne* gave him a **ball of string**:
++ **Unwind** string as you go
+  + **Track** each *visited* intersection + passage
+  + **Retrace** steps when no unvisited passages
+
+![Theseus in the Labyrinth](static/img/fig/labyrinth.jpg)
 
 ---
 ## Depth-first search
