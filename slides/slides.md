@@ -20,17 +20,41 @@
 ---
 ## Intro to graph algorithms
 + Representing **graphs**: *G* = (*V*, *E*)
-  + *V*: **vertices** / nodes (e.g., in an *array* or *linked-list*)
-  + *E*: **edges** connecting vertices (*directed* or *un*-)
-+ Representing **edges**:
-  + **Edge list**: array/list of *(u,v)* pairs of nodes
-  + **Adjacency list**: indexed by *start* node
-    + What about *undirected* graphs?
-    + How to find the (out)-*degree* of each vertex?
-  + **Adjacency matrix**: boolean *|V|* x *|V|* matrix
-    + *A[i,j]* = 1 iff *(i,j)* is an edge
-    + What about *undirected* graphs?
-    + What about *weighted* graphs?
+  + *V*: **vertices** / nodes
+    + storage: *array*, *linked-list*, etc.
+  + *E*: **edges** connecting vertices
+    + *directed* or *undirected*
+    + storage: edge *list*, adjacency *matrix*, etc.
+
+| graph | vertex | edge |
+|-------|--------|------|
+| air transport |  airport | flight path |
+| social | person | friendship/relationship |
+| internet | computer | network connection |
+| finance | stock/asset | transaction |
+| neural net | neuron | synapse |
+| protein net | protein | protein-protein interaction |
+
+---
+## Examples
+
+>>>
+TODO: proteins
+TODO: internet
+TODO: politics
+TODO: flowingdata for more
+
+---
+## Representing edges
++ **Edge list**: array/list of *(u,v)* pairs of nodes
+  + [ (1,2), (1,3), (2,4) ]
++ **Adjacency list**: indexed by *start* node
+  + [ {1: [2, 3]}, {2: [1, 4]}, {3: [1]}, {4: [2]} ]
+  + How to find the (out)-*degree* of each vertex?
++ **Adjacency matrix**: boolean *|V|* x *|V|* matrix
+  + *A[i,j]* = 1 iff *(i,j)* is an edge
+  + What about *weighted* graphs?
+  + \` ( (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0) )\`
 
 ---
 ## Graph traversal: breadth-first
