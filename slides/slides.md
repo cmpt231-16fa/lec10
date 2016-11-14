@@ -45,16 +45,31 @@ TODO: politics
 TODO: flowingdata for more
 
 ---
+## Problems in graph theory
++ **Path finding**: is there a path from *u* to *v*?
++ **Shortest path**: find the *shortest* path from *u* to *v*
++ **Cycle**: does the graph have any *cycles*?
++ **Euler cycle**: find a cycle using each *edge* exactly once
++ **Hamilton cycle**: find a cycle using each *vertex* exactly once
++ **Connectivity**: are all the vertices *connected*?
++ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
++ **Planarity**: can the graph be drawn in *2D* without crossing edges?
++ **Isomorphism**: Do two adjacency lists represent the *same* graph?
+
+---
 ## Representing edges
 + **Edge list**: array/list of *(u,v)* pairs of nodes
   + [ (1,2), (1,3), (2,4) ]
+  + How to find *neighbours* of a vertex *u*?
 + **Adjacency list**: indexed by *start* node
   + [ {1: [2, 3]}, {2: [1, 4]}, {3: [1]}, {4: [2]} ]
+  + What about *directed* graphs?
   + How to find the (out)-*degree* of each vertex?
 + **Adjacency matrix**: boolean *|V|* x *|V|* matrix
   + *A[i,j]* = 1 iff *(i,j)* is an edge
   + What about *weighted* graphs?
   + \` ( (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0) )\`
++ In practise, most graphs are **sparse**: what representation?
 
 ---
 ## Graph traversal: breadth-first
