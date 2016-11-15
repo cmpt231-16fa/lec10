@@ -81,6 +81,7 @@ TODO: flowingdata for more
 + BFS: overlay a **breadth-first tree**
   + Choose a *start* (root) node
   + *Path* in tree = *shortest* path from root
+  + Only nodes *reachable* from start node
   + BFS tree not necessarily *unique*
 + But the graph G could have **loops**
   + Need to **track** which nodes we've seen
@@ -114,9 +115,6 @@ def BFS( V, E, start ):
 </div><div>
 ![BFS](static/img/bfs.svg)
 </div></div>
-
->>>
-TODO: fig
 
 ---
 ## Outline
@@ -203,9 +201,6 @@ def DFS-Visit( V, E, u ):
 ![white path](static/img/white-path.svg)
 </div></div>
 
->>>
-TODO: fig
-
 ---
 ## DFS: flood-fill
 
@@ -220,9 +215,6 @@ TODO: fig
   **acyclic** &hArr; no **back** edges
 
 ![edge classification](static/img/edge-class.svg)
-
->>>
-TODO: fig
 
 ---
 ## DFS: preparing for a date (XKCD)
@@ -289,5 +281,23 @@ TODO: fig
 
 ---
 ## Online demos
-+ **Breadth-first** search: [U San Fran](https://www.cs.usfca.edu/~galles/visualization/BFS.html)
-
++ **Breadth-first** search:
+  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/BFS.html)
+    (generate random graphs)
+  + [VisuAlgo](https://visualgo.net/dfsbfs)
+    (draw your own graph; step through code)
++ **Bipartite** graph checking:
+  + [VisuAlgo](https://visualgo.net/dfsbfs)
+    (both BFS and DFS versions)
++ **Depth-first** search:
+  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/DFS.html)
+    (only one tree of the DFS forest)
+  + [VisuAlgo](https://visualgo.net/dfsbfs)
+    (edge classification, only one tree)
++ **Topological sort**:
+  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/TopoSortDFS.html)
+  + [VisuAlgo](https://visualgo.net/dfsbfs)
++ **Connected** components:
+  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/ConnectedComponent.html)
+  + [VisuAlgo](https://visualgo.net/dfsbfs)
+    (SCC: Kosaraju's algorithm)
