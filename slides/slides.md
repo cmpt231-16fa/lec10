@@ -49,7 +49,12 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 | protein net | protein | protein-protein interaction |
 
 ---
-## Examples
+<div class="caption">
+Map of the internet (coloured by RIR):
+[OPTE 2015](http://www.opte.org/the-internet/)
+</div>
+
+![OPTE 2015](static/bg/opte-internet-2015.png)
 
 >>>
 TODO: proteins
