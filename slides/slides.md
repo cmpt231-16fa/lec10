@@ -41,12 +41,12 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 ## Applications of graphs
 | graph | vertex | edge |
 |-------|--------|------|
-| air transport |  airport | flight path |
-| social | person | friendship/relationship |
-| internet | computer | network connection |
-| finance | stock/asset | transaction |
-| neural net | neuron | synapse |
-| protein net | protein | protein-protein interaction |
+| air **transport** |  airport | *flight* path |
+| **social** | person | *friendship*/relationship |
+| **internet** | computer | *network* connection |
+| **finance** | *stock*/asset | transaction |
+| **neural** net | neuron | *synapse* |
+| **protein** net | protein | *protein-protein* interaction |
 
 ---
 <div class="caption">
@@ -90,7 +90,7 @@ of 20 adult human brains: map of white-matter connections.
 + **Euler cycle**: traverse each *edge* exactly once
 + **Hamilton cycle**: touch each *vertex* exactly once
 + **Connectivity**: are all the vertices *connected*?
-+ **Bipartite** checking: can you disconnect the graph by *removing* one vertex?
++ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
 + **Planarity**: draw graph in *2D* w/o crossing edges?
 + **Isomorphism**: are two graphs *equivalent*?
 
@@ -116,7 +116,7 @@ of 20 adult human brains: map of white-matter connections.
   + *Path* in tree = *shortest* path from root
     + Only nodes *reachable* from start node
   + BFS tree not necessarily *unique*
-+ But the graph G could have **loops**
++ Graph could have **loops**:
   + Need to **track** which nodes we've seen
 + Assign **colours** to nodes as we traverse graph:
   + *White*: unvisited
@@ -146,10 +146,11 @@ def BFS( V, E, start ):
 </code></pre>
 <strong>Complexity?</strong>
 </div><div>
-![BFS](static/img/Breadth-first-tree.svg)
-<div class="caption">
-[Alexander Drichel, CC-BY 3.0](https://commons.wikimedia.org/wiki/File%3ABreadth-first-tree.svg)
+![BFS](static/img/Breadth-First-Search-Algorithm.gif)
 </div></div>
+
+---
+## Bipartite graphs
 
 ---
 ## Outline
@@ -158,10 +159,10 @@ def BFS( V, E, start ):
 ## Trémaux maze solving
 + Graph representation of a **maze**:
   + *Vertex* = **intersection**, *edge* = **passage**
-+ **Theseus** slaying the Minotaur in the *Labyrinth*
-  + *Ariadne* gave him a **ball of string**:
 
 <div class="imgbox"><div><ul>
+<li> <strong>Theseus</strong> slaying the Minotaur in the <em>Labyrinth</em> <ul>
+  <li> <em>Ariadne</em> gave him a <strong>ball of string</strong>: </li> </ul></li>
 <li> <strong>Unwind</strong> string as you go <ul>
   <li> <strong>Track</strong> each <em>visited</em> intersection + passage </li>
   <li> <strong>Retrace</strong> steps when no unvisited passages </li>
@@ -169,7 +170,7 @@ def BFS( V, E, start ):
 </ul></div><div>
 ![Theseus in the Labyrinth](static/img/Theseus-Labyrinth.jpg)
 <div class="caption">
-2nd c. AD Roman mosaic, Kunsthistorische Museum, Vienna
+2nd c. AD Roman mosaic, Kunsthistorische Museum, Vienna <br/>
 [(Asaf Braverman, CC-BY-NC-SA 2.0)](https://www.flickr.com/photos/theheartindifferentkeys/4172187101)
 </div>
 </div></div>
@@ -262,6 +263,7 @@ def DFS-Visit( V, E, u ):
 ---
 ## DFS: preparing for a date (XKCD)
 [![XKCD 761](http://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
+<!-- .element: style="width: 80%" -->
 
 ---
 ## Outline
@@ -279,8 +281,6 @@ def DFS-Visit( V, E, u ):
 + *DFS* might not be **unique**, so <br/>
   *topological sort* might not be unique
 
-![DFS](static/img/dfs.svg)
-
 ---
 ## Topological sort: example
 + Proof of **correctness**: \`(u,v) in E => v.f < u.f\`
@@ -296,7 +296,7 @@ def DFS-Visit( V, E, u ):
 ---
 ## DFS: connected components
 + Largest **completely-connected** set of vertices:
-  + Every *vertex* in the component has a **path**
+  + Every *vertex* has a **path**
     to every *other* vertex in the component
 + Algorithm:
   + Compute *DFS* to find **finishing** times
@@ -323,6 +323,7 @@ def DFS-Visit( V, E, u ):
 ## Outline
 
 ---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 ## Online demos
 + **Breadth-first** search:
   + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/BFS.html)
@@ -338,8 +339,8 @@ def DFS-Visit( V, E, u ):
   + [VisuAlgo](https://visualgo.net/dfsbfs)
     (edge classification, only one tree)
 + **Topological sort**:
-  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/TopoSortDFS.html)
-  + [VisuAlgo](https://visualgo.net/dfsbfs)
+  + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/TopoSortDFS.html),
+    [VisuAlgo](https://visualgo.net/dfsbfs)
 + **Connected** components:
   + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/ConnectedComponent.html)
   + [VisuAlgo](https://visualgo.net/dfsbfs)
