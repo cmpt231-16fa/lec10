@@ -15,9 +15,9 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 ## Outline for today
 + Intro to **graph** algorithms
+  + *Applications* and typical *problems*
   + *Edge list*, adjacency list, adjacency matrix
 + **Breadth-first** graph traversal
-  + Checking for **bipartite** graph
 + **Depth-first** graph traversal
   + **Parenthesis** structure
   + Edge **classification**
@@ -95,6 +95,19 @@ of 20 adult human brains: map of white-matter connections.
 + **Isomorphism**: are two graphs *equivalent*?
 
 ---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
+## Outline for today
++ Intro to graph algorithms
+  + Applications and typical problems
+  + Edge list, adjacency list, adjacency matrix
++ **Breadth-first graph traversal**
++ Depth-first graph traversal
+  + Parenthesis structure
+  + Edge classification
+  + Topological sort
+  + Finding strongly-connected components
+
+---
 ## Representing edges
 + **Edge list**: array/list of *(u,v)* pairs of nodes
   + [ (1,2), (1,3), (2,4) ]
@@ -150,10 +163,28 @@ def BFS( V, E, start ):
 </div></div>
 
 ---
-## Bipartite graphs
+## BFS properties
++ BFS examines reachable nodes in order of **distance** from source
+  + Queue first holds all nodes of distance *k*,
+  + Then all nodes of distance *k+1*, etc.
++ **Levels** of BFS tree = nodes of same *distance* from source
++ &rArr; BFS computes **shortest paths** from source to all other reachable nodes
+  in time \`O(|V|+|E|)\`
+  + e.g., [Kevin *Bacon* number](https://oracleofbacon.org/):
+    + vertices = *actors*, edges = *shared movies*
 
 ---
-## Outline
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
+## Outline for today
++ Intro to graph algorithms
+  + Applications and typical problems
+  + Edge list, adjacency list, adjacency matrix
++ Breadth-first graph traversal
++ **Depth-first graph traversal**
+  + Parenthesis structure
+  + Edge classification
+  + Topological sort
+  + Finding strongly-connected components
 
 ---
 ## Trémaux maze solving
@@ -274,9 +305,6 @@ def DFS-Visit( V, E, u ):
 <!-- .element: style="width: 75%" -->
 
 ---
-## Outline
-
----
 ## DFS: topological sort
 + **Order** vertices such that for every edge *u* &rarr; *v*, <br/>
   *u* comes **before** *v* in the sort
@@ -288,6 +316,19 @@ def DFS-Visit( V, E, u ):
   + Sort in **decreasing** order of *finish* time
 + *DFS* might not be **unique**, so <br/>
   *topological sort* might not be unique
+
+---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
+## Outline for today
++ Intro to graph algorithms
+  + Applications and typical problems
+  + Edge list, adjacency list, adjacency matrix
++ Breadth-first graph traversal
++ Depth-first graph traversal
+  + Parenthesis structure
+  + Edge classification
+  + **Topological sort**
+  + **Finding strongly-connected components**
 
 ---
 ## Topological sort: example
@@ -328,7 +369,29 @@ def DFS-Visit( V, E, u ):
 </div></div>
 
 ---
-## Outline
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
+## Outline for today
++ Intro to **graph** algorithms
+  + *Applications* and typical *problems*
+  + *Edge list*, adjacency list, adjacency matrix
++ **Breadth-first** graph traversal
++ **Depth-first** graph traversal
+  + **Parenthesis** structure
+  + Edge **classification**
+  + Topological **sort**
+  + Finding **strongly-connected** components
+
+---
+## Problems in graph theory
++ **Path finding**: is there a path from *u* to *v*?
++ **Shortest path**: find the *shortest* path from *u* to *v*
++ **Cycle**: does the graph have any *cycles*?
++ **Euler cycle**: traverse each *edge* exactly once
++ **Hamilton cycle**: touch each *vertex* exactly once
++ **Connectivity**: are all the vertices *connected*?
++ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
++ **Planarity**: draw graph in *2D* w/o crossing edges?
++ **Isomorphism**: are two graphs *equivalent*?
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
@@ -338,9 +401,6 @@ def DFS-Visit( V, E, u ):
     (generate random graphs)
   + [VisuAlgo](https://visualgo.net/dfsbfs)
     (draw your own graph; step through code)
-+ **Bipartite** graph checking:
-  + [VisuAlgo](https://visualgo.net/dfsbfs)
-    (both BFS and DFS versions)
 + **Depth-first** search:
   + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/DFS.html)
     (only one tree of the DFS forest)
