@@ -137,7 +137,7 @@ TODO: fig
 ## Depth-first search
 + First explore as **deep** as we can
   + **Backtrack** to explore other paths
-  + **Recursive** algorithm
+  + **Recursive** algorithm (ball of string = *call stack*)
 + **Colouring**: *white* = undiscovered, *grey* = discovered, <br/>
   *black* = finished (visited all neighbours)
 + Add **timestamps** on *discover* and *finish*
@@ -174,9 +174,6 @@ def DFS-Visit( V, E, u ):
 ![DFS](static/img/dfs.svg)
 </div></div>
 
->>>
-TODO: fig
-
 ---
 ## DFS: parenthesis structure
 + Each node's **subtree** is visited <br/>
@@ -210,6 +207,9 @@ TODO: fig
 TODO: fig
 
 ---
+## DFS: flood-fill
+
+---
 ## DFS: edge classification
 + All **edges** in a graph are either
   + **Tree** edges: in the *DFS forest*
@@ -223,6 +223,10 @@ TODO: fig
 
 >>>
 TODO: fig
+
+---
+## DFS: preparing for a date (XKCD)
+[![XKCD 761](http://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
 
 ---
 ## Outline
