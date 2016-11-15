@@ -1,3 +1,4 @@
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 # CMPT231
 ## Lecture 10: ch18
 ### Graph Algorithms
@@ -7,29 +8,37 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 </div>
 
 ---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 ## Devotional
 
 ---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 ## Outline for today
 + Intro to **graph** algorithms
   + *Edge list*, adjacency list, adjacency matrix
 + **Breadth-first** graph traversal
+  + Checking for **bipartite** graph
 + **Depth-first** graph traversal
   + **Parenthesis** structure
   + Edge **classification**
   + Topological **sort**
   + Finding **strongly-connected** components
-+ Minimum **spanning** trees
 
 ---
 ## Intro to graph algorithms
 + Representing **graphs**: *G* = (*V*, *E*)
-  + *V*: **vertices** / nodes
-    + storage: *array*, *linked-list*, etc.
-  + *E*: **edges** connecting vertices
-    + *directed* or *undirected*
-    + storage: edge *list*, adjacency *matrix*, etc.
++ *V*: **vertices** / nodes
+  + storage: *array*, *linked-list*, etc.
++ *E*: **edges** connecting vertices
+  + *directed* or *undirected*
+  + storage: edge *list*, adjacency *matrix*, etc.
++ Some corner cases:
+  + *Self-loop*: edge from vertex to itself
+  + *Parallel* edges: multiple edges with same start/end
++ **Complexity** of graph algorithms in terms of \`|V| and |E|\`
 
+---
+## Applications of graphs
 | graph | vertex | edge |
 |-------|--------|------|
 | air transport |  airport | flight path |
@@ -53,12 +62,12 @@ TODO: flowingdata for more
 + **Path finding**: is there a path from *u* to *v*?
 + **Shortest path**: find the *shortest* path from *u* to *v*
 + **Cycle**: does the graph have any *cycles*?
-+ **Euler cycle**: find a cycle using each *edge* exactly once
-+ **Hamilton cycle**: find a cycle using each *vertex* exactly once
++ **Euler cycle**: traverse each *edge* exactly once
++ **Hamilton cycle**: touch each *vertex* exactly once
 + **Connectivity**: are all the vertices *connected*?
-+ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
-+ **Planarity**: can the graph be drawn in *2D* without crossing edges?
-+ **Isomorphism**: Do two adjacency lists represent the *same* graph?
++ **Bipartite** checking: can you disconnect the graph by *removing* one vertex?
++ **Planarity**: draw graph in *2D* w/o crossing edges?
++ **Isomorphism**: are two graphs *equivalent*?
 
 ---
 ## Representing edges
@@ -66,13 +75,12 @@ TODO: flowingdata for more
   + [ (1,2), (1,3), (2,4) ]
   + How to find *neighbours* of a vertex *u*?
 + **Adjacency list**: indexed by *start* node
-  + [ {1: [2, 3]}, {2: [1, 4]}, {3: [1]}, {4: [2]} ]
-  + What about *directed* graphs?
+  + [ {*1*: [2, 3]}, {*2*: [1, 4]}, {*3*: [1]}, {*4*: [2]} ]
   + How to find the (out)-*degree* of each vertex?
 + **Adjacency matrix**: boolean *|V|* x *|V|* matrix
-  + *A[i,j]* = 1 iff *(i,j)* is an edge
-  + What about *weighted* graphs?
-  + \` ( (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0) )\`
+  + *A[i,j]* = 1 iff *(i,j)* is an edge:
+    \` ( (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0) )\`
+  + What about *weighted* graphs?  *Directed* graphs?
 + In practise, most graphs are **sparse**: what representation?
 
 ---
@@ -81,7 +89,7 @@ TODO: flowingdata for more
 + BFS: overlay a **breadth-first tree**
   + Choose a *start* (root) node
   + *Path* in tree = *shortest* path from root
-  + Only nodes *reachable* from start node
+    + Only nodes *reachable* from start node
   + BFS tree not necessarily *unique*
 + But the graph G could have **loops**
   + Need to **track** which nodes we've seen
@@ -301,3 +309,6 @@ def DFS-Visit( V, E, u ):
   + [U San Fran](https://www.cs.usfca.edu/~galles/visualization/ConnectedComponent.html)
   + [VisuAlgo](https://visualgo.net/dfsbfs)
     (SCC: Kosaraju's algorithm)
+
+---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" class="empty" -->
