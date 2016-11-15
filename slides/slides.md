@@ -56,11 +56,34 @@ Map of the internet (coloured by RIR):
 
 ![OPTE 2015](static/bg/opte-internet-2015.png)
 
+---
+<div class="caption">
+24hrs of flights in/out of Europe:
+[422South for NATS](http://422south.com/work/euro-24-air-traffic-visualization-for-nats)
+</div>
+
+![422South Euro24](static/bg/422south-euro24.jpg)
+
+---
+<div class="caption">
+[Connectome](https://en.wikipedia.org/wiki/Connectome)
+of 20 adult human brains: map of white-matter connections.
+[CC-BY-SA 4.0, Andreashorn](https://commons.wikimedia.org/wiki/File%3AThe_Human_Connectome.png)
+</div>
+
+![Connectome](static/bg/Human_Connectome.png)
+
+---
+<div class="caption">
+[Proteome](https://en.wikipedia.org/wiki/Proteome)
+(protein-protein interaction network) of syphilis spirochete, <i>T. pallidum</i>.
+[CC-BY 1.0, Häuser et al.](https://commons.wikimedia.org/wiki/File%3AThe_protein_interaction_network_of_Treponema_pallidum.png)
+</div>
+
+![Proteome](static/bg/Proteome-Treponema_pallidum.png)
+
 >>>
-TODO: proteins
-TODO: internet
 TODO: politics
-TODO: flowingdata for more
 
 ---
 ## Problems in graph theory
