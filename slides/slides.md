@@ -287,3 +287,7 @@ TODO: fig
 ---
 ## Outline
 
+---
+## Online demos
++ **Breadth-first** search: [U San Fran](https://www.cs.usfca.edu/~galles/visualization/BFS.html)
+
