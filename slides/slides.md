@@ -1,6 +1,6 @@
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 # CMPT231
-## Lecture 10: ch18
+## Lecture 10: ch22
 ### Graph Algorithms
 
 <div class="caption">
@@ -93,7 +93,7 @@ of 20 adult human brains: map of white-matter connections.
 </div>
 
 ![Proteome](static/bg/Proteome-Treponema_pallidum.png)
-<!-- .element: style="width:80%" -->
+<!-- .element: style="width:70%" -->
 
 ---
 ## Problems in graph theory
@@ -239,7 +239,7 @@ def BFS( V, E, start ):
 def DFS( V, E ):
   init V all white and NULL parent
   time = 0
-  for u in V:     # why loop over *all* V?
+  for u in V:     # why loop over ALL verts?
     if u.colour == white:
       DFS-Visit( V, E, u )
 </code></pre>
@@ -355,6 +355,10 @@ def DFS-Visit( V, E, u ):
   + As each vertex *finishes*, insert at *head* of a linked list
 + *DFS* might not be **unique**, so <br/>
   *topological sort* might not be unique
+
+---
+## Topological sort: example
+![Fig 22-7: topo sort](static/img/Fig-22-7.svg)
 
 ---
 ## Topological sort: proof
