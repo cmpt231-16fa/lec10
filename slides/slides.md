@@ -9,7 +9,16 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
-## Devotional
+## Romans 10:13-15 <span class="ref">(NIV)</span>
+"Everyone who **calls** on the **name of the Lord** will be saved."
+
+How, then, can they **call** on the one they have not **believed** in? <br/>
+And how can they **believe** in the one of whom they have not **heard**? <br/>
+And how can they **hear** without someone **preaching** to them? <br/>
+And how can anyone **preach** unless they are **sent**?
+
+As it is written: <br/>
+“How beautiful are the **feet** of those who bring **good news**!"
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
