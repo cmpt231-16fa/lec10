@@ -10,18 +10,18 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
 ## Romans 10:13-15 <span class="ref">(NIV)</span>
-"Everyone who **calls** on the **name of the Lord** will be saved."
+"Everyone who **calls** on the *name of the Lord* will be saved."
 
-How, then, can they **call** on <br/>
+How, then, can they *call* on <br/>
 the one they have not **believed** in? <br/>
-And how can they **believe** in <br/>
+And how can they *believe* in <br/>
 the one of whom they have not **heard**? <br/>
-And how can they **hear** <br/>
+And how can they *hear* <br/>
 without someone **preaching** to them? <br/>
-And how can anyone **preach** unless they are **sent**?
+And how can anyone *preach* unless they are **sent**?
 
 As it is written: <br/>
-“How beautiful are the **feet** of those who bring **good news**!"
+“How beautiful are the *feet* of those who bring **good news**!"
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
@@ -257,6 +257,7 @@ def DFS-Visit( V, E, u ):
   u.finished = time
 </code></pre>
 </div><div>
+![DFS anim](static/img/Depth-First-Search.gif)
 ![DFS](static/img/DFS.svg)
 </div></div>
 
@@ -350,24 +351,24 @@ def DFS-Visit( V, E, u ):
   + Assumes **no cycles**! (i.e., *DAG*: directed acyclic)
 + **Applications**: *dependency* resolution, *compiling* files, <br/>
   task planning / *Gantt* chart
-+ Tweak **DFS**: when each vertex is *finished*, <br/>
-  insert it at the *head* of a linked list
-  + Sort in **decreasing** order of *finish* time
++ Use **DFS** to sort in **decreasing** order of *finish* time
+  + As each vertex *finishes*, insert at *head* of a linked list
 + *DFS* might not be **unique**, so <br/>
   *topological sort* might not be unique
 
 ---
-## Topological sort: example
+## Topological sort: proof
++ Recall DFS **colouring**: *white* = undiscovered
+  + *grey* = discovered, *black* = finished
 + Proof of **correctness**: \`(u,v) in E => v.f < u.f\`
 + When DFS explores *(u,v)*, what **colour** is *v*?
-  + if **gray**: so *v* is an **ancestor** of *u*
+  + if **gray**: then *v* is an **ancestor** of *u*
     + So *(u,v)* is a **back** edge
     + So graph has a **loop** (disallowed)
-  + if **white**: becomes a **child**: *u.d* < *v.d* < *v.f* < *u.f*
-  + if **black**: *v* **done**, but *u* not done yet: *v.f* < *u.f*
-
-![DFS](static/img/DFS.svg)
-<!-- .element: style="width:30%" -->
+  + if **white**: then *v* becomes a **child** of *u*:
+    + *u.d* < *v.d* < *v.f* < *u.f*
+  + if **black**: then *v* is **done**, but not *u* yet:
+    + *v.f* < *u.f*
 
 ---
 ## DFS: connected components
@@ -387,10 +388,14 @@ def DFS-Visit( V, E, u ):
 ---
 ## Connected components
 <div class="imgbox"><div style="flex:2"><ul>
-<li> (a) <strong>Original</strong> graph and <em>DFS</em> (shaded) <ul>
-  <li> Starting at <em>c</em> </li></ul> </li>
-<li> (b) <strong>Transpose</strong> graph and its <em>DFS</em> <ul>
-  <li> Starting at <em>b</em> (finished <strong>last</strong> in first DFS)</li>
+<li> (a) <strong>Original</strong> graph: <ul>
+  <li> <em>DFS</em> trees shaded</li>
+  <li> DFS starts at <em>c</em> </li>
+  </ul></li>
+<li> (b) <strong>Transpose</strong> graph: <ul>
+  <li> All edges <em>reversed</em> </li>
+  <li> <em>DFS</em> trees shaded</li>
+  <li> DFS starts at <em>b</em> (<strong>last</strong> to finish in orig DFS)</li>
   </ul></li>
 <li> (c) Coalesce vertices into <strong>component graph</strong> </li>
 </ul></div><div style="flex:3">
