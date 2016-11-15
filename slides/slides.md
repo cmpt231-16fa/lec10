@@ -82,9 +82,6 @@ of 20 adult human brains: map of white-matter connections.
 
 ![Proteome](static/bg/Proteome-Treponema_pallidum.png)
 
->>>
-TODO: politics
-
 ---
 ## Problems in graph theory
 + **Path finding**: is there a path from *u* to *v*?
@@ -149,7 +146,9 @@ def BFS( V, E, start ):
 </code></pre>
 <strong>Complexity?</strong>
 </div><div>
-![BFS](static/img/bfs.svg)
+![BFS](static/img/Breadth-first-tree.svg)
+<div class="caption">
+[Alexander Drichel, CC-BY 3.0](https://commons.wikimedia.org/wiki/File%3ABreadth-first-tree.svg)
 </div></div>
 
 ---
@@ -159,13 +158,21 @@ def BFS( V, E, start ):
 ## Trémaux maze solving
 + Graph representation of a **maze**:
   + *Vertex* = **intersection**, *edge* = **passage**
-+ **Theseus** in *Labyrinth* to kill the *Minotaur*
++ **Theseus** slaying the Minotaur in the *Labyrinth*
   + *Ariadne* gave him a **ball of string**:
-+ **Unwind** string as you go
-  + **Track** each *visited* intersection + passage
-  + **Retrace** steps when no unvisited passages
 
-![Theseus in the Labyrinth](static/img/fig/labyrinth.jpg)
+<div class="imgbox"><div><ul>
+<li> <strong>Unwind</strong> string as you go <ul>
+  <li> <strong>Track</strong> each <em>visited</em> intersection + passage </li>
+  <li> <strong>Retrace</strong> steps when no unvisited passages </li>
+  </ul></li>
+</ul></div><div>
+![Theseus in the Labyrinth](static/img/Theseus-Labyrinth.jpg)
+<div class="caption">
+2nd c. AD Roman mosaic, Kunsthistorische Museum, Vienna
+[(Asaf Braverman, CC-BY-NC-SA 2.0)](https://www.flickr.com/photos/theheartindifferentkeys/4172187101)
+</div>
+</div></div>
 
 ---
 ## Depth-first search
