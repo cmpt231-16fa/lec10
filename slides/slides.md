@@ -212,7 +212,9 @@ def DFS-Visit( V, E, u ):
   u.finished = time
 </code></pre>
 </div><div>
-![DFS](static/img/dfs.svg)
+![DFS](static/img/Depth-First-Search.gif)
+<div class="caption">
+[CC-BY-SA 3.0](https://commons.wikimedia.org/wiki/File%3ABreadth-First-Search-Algorithm.gif)
 </div></div>
 
 ---
