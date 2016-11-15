@@ -212,9 +212,7 @@ def DFS-Visit( V, E, u ):
   u.finished = time
 </code></pre>
 </div><div>
-![DFS](static/img/Depth-First-Search.gif)
-<div class="caption">
-[CC-BY-SA 3.0](https://commons.wikimedia.org/wiki/File%3ABreadth-First-Search-Algorithm.gif)
+![DFS](static/img/DFS.svg)
 </div></div>
 
 ---
@@ -237,7 +235,7 @@ def DFS-Visit( V, E, u ):
   + i.e., *u.d* < *v.d* < *v.f* < *u.f*
 
 <div class="imgbox"><div><ul>
-<li> <strong>White-path<strong> theorem: <ul>
+<li> <strong>White-path</strong> theorem: <ul>
   <li> <em>v</em> is a <strong>descendant</strong> of <em>u</em> in the DFS &hArr; </li>
   <li> When <em>u</em> is <em>discovered</em>, there is <br/>
     a <strong>path</strong> <em>u</em> &rarr; <em>v</em> all of <em>white</em> vertices </li>
