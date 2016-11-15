@@ -12,9 +12,12 @@ Some material from [Sedgewick + Wayne, "Algorithms"](http://algs4.cs.princeton.e
 ## Romans 10:13-15 <span class="ref">(NIV)</span>
 "Everyone who **calls** on the **name of the Lord** will be saved."
 
-How, then, can they **call** on the one they have not **believed** in? <br/>
-And how can they **believe** in the one of whom they have not **heard**? <br/>
-And how can they **hear** without someone **preaching** to them? <br/>
+How, then, can they **call** on <br/>
+the one they have not **believed** in? <br/>
+And how can they **believe** in <br/>
+the one of whom they have not **heard**? <br/>
+And how can they **hear** <br/>
+without someone **preaching** to them? <br/>
 And how can anyone **preach** unless they are **sent**?
 
 As it is written: <br/>
@@ -90,6 +93,7 @@ of 20 adult human brains: map of white-matter connections.
 </div>
 
 ![Proteome](static/bg/Proteome-Treponema_pallidum.png)
+<!-- .element: style="width:80%" -->
 
 ---
 ## Problems in graph theory
@@ -127,7 +131,7 @@ of 20 adult human brains: map of white-matter connections.
 + **Adjacency matrix**: boolean *|V|* x *|V|* matrix
   + *A[i,j]* = 1 iff *(i,j)* is an edge:
     \` ( (0, 1, 1, 0), (1, 0, 0, 1), (1, 0, 0, 0), (0, 1, 0, 0) )\`
-  + What about *weighted* graphs?  *Directed* graphs?
+  + What about *directed* graphs?  *Weighted* graphs?
 + In practise, most graphs are **sparse**: what representation?
 
 ---
@@ -173,13 +177,13 @@ def BFS( V, E, start ):
 
 ---
 ## BFS properties
-+ BFS examines reachable nodes in order of **distance** from source
++ BFS examines nodes in order of **distance** from source
   + Queue first holds all nodes of distance *k*,
   + Then all nodes of distance *k+1*, etc.
 + **Levels** of BFS tree = nodes of same *distance* from source
-+ &rArr; BFS computes **shortest paths** from source to all other reachable nodes
-  in time \`O(|V|+|E|)\`
-  + e.g., [Kevin *Bacon* number](https://oracleofbacon.org/):
++ &rArr; BFS computes **shortest paths** from source <br/>
+  to all other reachable nodes in time \`O(|V|+|E|)\`
+  + e.g., [Kevin Bacon number](https://oracleofbacon.org/):
     + vertices = *actors*, edges = *shared movies*
 
 ---
@@ -202,7 +206,7 @@ def BFS( V, E, start ):
 
 <div class="imgbox"><div><ul>
 <li> <strong>Theseus</strong> slaying the Minotaur in the <em>Labyrinth</em> <ul>
-  <li> <em>Ariadne</em> gave him a <strong>ball of string</strong>: </li> </ul></li>
+  <li> Ariadne gave him a tool: <strong>ball of string</strong>: </li> </ul></li>
 <li> <strong>Unwind</strong> string as you go <ul>
   <li> <strong>Track</strong> each <em>visited</em> intersection + passage </li>
   <li> <strong>Retrace</strong> steps when no unvisited passages </li>
@@ -235,7 +239,7 @@ def BFS( V, E, start ):
 def DFS( V, E ):
   init V all white and NULL parent
   time = 0
-  for u in V:     # why loop over all V?
+  for u in V:     # why loop over *all* V?
     if u.colour == white:
       DFS-Visit( V, E, u )
 </code></pre>
@@ -273,8 +277,8 @@ def DFS-Visit( V, E, u ):
 ## DFS: parenthesis structure
 + Each node's **subtree** is visited <br/>
   between its *discovery* and *finish* times
-+ **Print** a \`(.u\` when we *discover* node *u*
-  + print a \`)\_u\` when we *finish* it
++ **Print** a \`(.\_u\` when we *discover* node *u*
+  + Print a \`)\_u\` when we *finish* it
 + Output is a valid **parenthesisation**:
   + e.g., \`(.\_u (.\_v (.\_w )\_w )\_v (.\_x (.\_y )\_y )\_x )\_u (.\_z )\_z\`
   + But not \`(.\_u (.\_v )\_u )\_v\`
@@ -322,9 +326,9 @@ def DFS-Visit( V, E, u ):
 ![edge classification](static/img/edge-class.svg)
 
 ---
-## DFS: preparing for a date (XKCD)
-[![XKCD 761](https://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
-<!-- .element: style="width: 70%" -->
+## DFS: preparing for a date [(XKCD)](http://xkcd.com/761/)
+![XKCD 761](https://imgs.xkcd.com/comics/dfs.png)
+<!-- .element: style="width: 75%" -->
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
@@ -341,8 +345,8 @@ def DFS-Visit( V, E, u ):
 
 ---
 ## DFS: topological sort
-+ **Order** vertices such that for every edge *u* &rarr; *v*, <br/>
-  *u* comes **before** *v* in the sort
++ Linear **ordering** of vertices such that:
+  + for every edge *u* &rarr; *v*, *u* comes **before** *v* in the sort
   + Assumes **no cycles**! (i.e., *DAG*: directed acyclic)
 + **Applications**: *dependency* resolution, *compiling* files, <br/>
   task planning / *Gantt* chart
@@ -363,7 +367,7 @@ def DFS-Visit( V, E, u ):
   + if **black**: *v* **done**, but *u* not done yet: *v.f* < *u.f*
 
 ![DFS](static/img/DFS.svg)
-<!-- .element: style="height:50%" -->
+<!-- .element: style="width:30%" -->
 
 ---
 ## DFS: connected components
@@ -383,14 +387,27 @@ def DFS-Visit( V, E, u ):
 ---
 ## Connected components
 <div class="imgbox"><div style="flex:2"><ul>
-<li> (a) <strong>Original</strong> graph and <em>DFS</em> (shaded) </li>
+<li> (a) <strong>Original</strong> graph and <em>DFS</em> (shaded) <ul>
+  <li> Starting at <em>c</em> </li></ul> </li>
 <li> (b) <strong>Transpose</strong> graph and its <em>DFS</em> <ul>
-  <li> Starting at <em>b</em> (finished <strong>last</strong>)</li>
+  <li> Starting at <em>b</em> (finished <strong>last</strong> in first DFS)</li>
   </ul></li>
 <li> (c) Coalesce vertices into <strong>component graph</strong> </li>
 </ul></div><div style="flex:3">
 ![Fig 22-9: components](static/img/Fig-22-9.svg)
 </div></div>
+
+---
+## Problems in graph theory
++ **Path finding**: is there a path from *u* to *v*?
++ **Shortest path**: find the *shortest* path from *u* to *v*
++ **Cycle**: does the graph have any *cycles*?
++ **Euler cycle**: traverse each *edge* exactly once
++ **Hamilton cycle**: touch each *vertex* exactly once
++ **Connectivity**: are all the vertices *connected*?
++ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
++ **Planarity**: draw graph in *2D* w/o crossing edges?
++ **Isomorphism**: are two graphs *equivalent*?
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
@@ -404,18 +421,6 @@ def DFS-Visit( V, E, u ):
   + Edge **classification**
   + Topological **sort**
   + Finding **strongly-connected** components
-
----
-## Problems in graph theory
-+ **Path finding**: is there a path from *u* to *v*?
-+ **Shortest path**: find the *shortest* path from *u* to *v*
-+ **Cycle**: does the graph have any *cycles*?
-+ **Euler cycle**: traverse each *edge* exactly once
-+ **Hamilton cycle**: touch each *vertex* exactly once
-+ **Connectivity**: are all the vertices *connected*?
-+ **Bi-connectivity**: can you disconnect the graph by *removing* one vertex?
-+ **Planarity**: draw graph in *2D* w/o crossing edges?
-+ **Isomorphism**: are two graphs *equivalent*?
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
