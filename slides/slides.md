@@ -242,11 +242,20 @@ def DFS-Visit( V, E, u ):
     a <strong>path</strong> <em>u</em> &rarr; <em>v</em> all of <em>white</em> vertices </li>
   </ul></li>
 </ul></div><div>
-![white path](static/img/white-path.svg)
+![DFS](static/img/DFS.svg)
 </div></div>
 
 ---
 ## DFS: flood-fill
++ **Vertex**: *pixel*
++ **Edge**: adjacent pixels of *similar* colour
++ **Blob**: all pixels *connected* to given pixel
+
+<div class="imgbox"><div>
+![Manhattan map](static/img/Manhattan.svg)
+</div><div>
+![Australia grid](static/img/Australia_grid2.png)
+</div></div>
 
 ---
 ## DFS: edge classification
@@ -255,15 +264,14 @@ def DFS-Visit( V, E, u ):
   + **Back** edges: up to *ancestor* in same DFS tree (incl *self-loop*)
   + **Forward** edges: down to *descendant*
   + **Cross** edges: *different* subtrees or DFS trees
-+ Lemma (*22.11*): for directed graphs, <br/>
-  **acyclic** &hArr; no **back** edges
++ For directed graphs: **acyclic** &hArr; no **back** edges
 
 ![edge classification](static/img/edge-class.svg)
 
 ---
 ## DFS: preparing for a date (XKCD)
 [![XKCD 761](http://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
-<!-- .element: style="width: 80%" -->
+<!-- .element: style="width: 75%" -->
 
 ---
 ## Outline
@@ -291,7 +299,7 @@ def DFS-Visit( V, E, u ):
   + if **white**: becomes a **child**: *u.d* < *v.d* < *v.f* < *u.f*
   + if **black**: *v* **done**, but *u* not done yet: *v.f* < *u.f*
 
-![topological sort](static/img/topo-sort.svg)
+![DFS](static/img/DFS.svg)
 
 ---
 ## DFS: connected components
@@ -305,7 +313,7 @@ def DFS-Visit( V, E, u ):
     + Start at vertex that finished **last** in orig DFS
   + Each **tree** in final DFS is a separate **component**
 
-![components](static/img/conn-comp.svg)
+![components](static/img/conn-comp.png)
 
 ---
 ## Connected components
@@ -316,7 +324,7 @@ def DFS-Visit( V, E, u ):
   </ul></li>
 <li> (c) Coalesce vertices into <strong>component graph</strong> </li>
 </ul></div><div style="flex:2">
-![Fig, components](static/img/Fig22-3.svg)
+![Fig 22-9: components](static/img/Fig-22-9.svg)
 </div></div>
 
 ---
