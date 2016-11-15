@@ -108,7 +108,7 @@ of 20 adult human brains: map of white-matter connections.
 ## Outline for today
 + Intro to graph algorithms
   + Applications and typical problems
-  + Edge list, adjacency list, adjacency matrix
+  + **Edge list, adjacency list, adjacency matrix**
 + **Breadth-first graph traversal**
 + Depth-first graph traversal
   + Parenthesis structure
@@ -257,10 +257,23 @@ def DFS-Visit( V, E, u ):
 </div></div>
 
 ---
+<!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
+## Outline for today
++ Intro to graph algorithms
+  + Applications and typical problems
+  + Edge list, adjacency list, adjacency matrix
++ Breadth-first graph traversal
++ Depth-first graph traversal
+  + **Parenthesis structure**
+  + **Edge classification**
+  + Topological sort
+  + Finding strongly-connected components
+
+---
 ## DFS: parenthesis structure
 + Each node's **subtree** is visited <br/>
   between its *discovery* and *finish* times
-+ **Print** a \`(\_u\` when we *discover* node *u*
++ **Print** a \`(.u\` when we *discover* node *u*
   + print a \`)\_u\` when we *finish* it
 + Output is a valid **parenthesisation**:
   + e.g., \`(.\_u (.\_v (.\_w )\_w )\_v (.\_x (.\_y )\_y )\_x )\_u (.\_z )\_z\`
@@ -275,13 +288,13 @@ def DFS-Visit( V, E, u ):
   &hArr; *v* is a **descendant** of *u* in the DFS
   + i.e., *u.d* < *v.d* < *v.f* < *u.f*
 
-<div class="imgbox"><div><ul>
+<div class="imgbox"><div style="flex:3"><ul>
 <li> <strong>White-path</strong> theorem: <ul>
   <li> <em>v</em> is a <strong>descendant</strong> of <em>u</em> in the DFS &hArr; </li>
   <li> When <em>u</em> is <em>discovered</em>, there is <br/>
     a <strong>path</strong> <em>u</em> &rarr; <em>v</em> all of <em>white</em> vertices </li>
   </ul></li>
-</ul></div><div>
+</ul></div><div style="flex:2">
 ![DFS](static/img/DFS.svg)
 </div></div>
 
@@ -311,20 +324,7 @@ def DFS-Visit( V, E, u ):
 ---
 ## DFS: preparing for a date (XKCD)
 [![XKCD 761](https://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
-<!-- .element: style="width: 75%" -->
-
----
-## DFS: topological sort
-+ **Order** vertices such that for every edge *u* &rarr; *v*, <br/>
-  *u* comes **before** *v* in the sort
-  + Assumes **no cycles**! (i.e., *DAG*: directed acyclic)
-+ **Applications**: *dependency* resolution, *compiling* files, <br/>
-  task planning / *Gantt* chart
-+ Tweak **DFS**: when each vertex is *finished*, <br/>
-  insert it at the *head* of a linked list
-  + Sort in **decreasing** order of *finish* time
-+ *DFS* might not be **unique**, so <br/>
-  *topological sort* might not be unique
+<!-- .element: style="width: 70%" -->
 
 ---
 <!-- .slide: data-background-image="static/bg/422south-euro24.jpg" -->
@@ -340,6 +340,19 @@ def DFS-Visit( V, E, u ):
   + **Finding strongly-connected components**
 
 ---
+## DFS: topological sort
++ **Order** vertices such that for every edge *u* &rarr; *v*, <br/>
+  *u* comes **before** *v* in the sort
+  + Assumes **no cycles**! (i.e., *DAG*: directed acyclic)
++ **Applications**: *dependency* resolution, *compiling* files, <br/>
+  task planning / *Gantt* chart
++ Tweak **DFS**: when each vertex is *finished*, <br/>
+  insert it at the *head* of a linked list
+  + Sort in **decreasing** order of *finish* time
++ *DFS* might not be **unique**, so <br/>
+  *topological sort* might not be unique
+
+---
 ## Topological sort: example
 + Proof of **correctness**: \`(u,v) in E => v.f < u.f\`
 + When DFS explores *(u,v)*, what **colour** is *v*?
@@ -350,6 +363,7 @@ def DFS-Visit( V, E, u ):
   + if **black**: *v* **done**, but *u* not done yet: *v.f* < *u.f*
 
 ![DFS](static/img/DFS.svg)
+<!-- .element: style="height:50%" -->
 
 ---
 ## DFS: connected components
@@ -364,16 +378,17 @@ def DFS-Visit( V, E, u ):
   + Each **tree** in final DFS is a separate **component**
 
 ![components](static/img/conn-comp.png)
+<!-- .element: style="width:80%" -->
 
 ---
 ## Connected components
-<div class="imgbox"><div><ul>
+<div class="imgbox"><div style="flex:2"><ul>
 <li> (a) <strong>Original</strong> graph and <em>DFS</em> (shaded) </li>
 <li> (b) <strong>Transpose</strong> graph and its <em>DFS</em> <ul>
   <li> Starting at <em>b</em> (finished <strong>last</strong>)</li>
   </ul></li>
 <li> (c) Coalesce vertices into <strong>component graph</strong> </li>
-</ul></div><div style="flex:2">
+</ul></div><div style="flex:3">
 ![Fig 22-9: components](static/img/Fig-22-9.svg)
 </div></div>
 
