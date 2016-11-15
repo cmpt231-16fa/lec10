@@ -310,7 +310,7 @@ def DFS-Visit( V, E, u ):
 
 ---
 ## DFS: preparing for a date (XKCD)
-[![XKCD 761](http://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
+[![XKCD 761](https://imgs.xkcd.com/comics/dfs.png)](http://xkcd.com/761/)
 <!-- .element: style="width: 75%" -->
 
 ---
