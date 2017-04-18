@@ -1,9 +1,9 @@
 # Lecture 10 [CMPT231](https://cmpt231-16fa.github.io)
 ## Graph Algorithms
 
-[![Travis-CI build status](https://travis-ci.org/sermons/reveal-skel.svg)](https://travis-ci.org/sermons/reveal-skel)
-[![Node dependencies](https://david-dm.org/sermons/reveal-skel.svg)](https://david-dm.org/sermons/reveal-skel)
-[![Node dev status](https://david-dm.org/sermons/reveal-skel/dev-status.svg)](https://david-dm.org/sermons/reveal-skel#info=devDependencies)
+[![Build status](https://travis-ci.org/cmpt231-16fa/lec10.svg)](https://travis-ci.org/cmpt231-16fa/lec10)
+[![Node deps](https://david-dm.org/cmpt231-16fa/lec10.svg)](https://david-dm.org/cmpt231-16fa/lec10)
+[![Node devDeps](https://david-dm.org/cmpt231-16fa/lec10/dev-status.svg)](https://david-dm.org/cmpt231-16fa/lec10#info=devDependencies)
 
 Template presentation: [reveal-skel](https://github.com/sermons/reveal-skel)
 
